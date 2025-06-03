@@ -9,6 +9,9 @@ jobs:
   deploy:
     name: Deploy Infra
     runs-on: self-hosted
+    env:
+      ANSIBLE_CONFIG: ansible/ansible.cfg
+      ANSIBLE_INVENTORY: ansible/inventories/production/hosts.yml
 
     steps:
       - name: Checkout repository
