@@ -1,0 +1,12 @@
+- name: Echo VM hostname
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Print hostname
+      command: hostname
+      register: result
+
+    - name: Show result
+      debug:
+        var: result.stdout
