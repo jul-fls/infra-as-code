@@ -14,6 +14,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: List files in repository
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Files in the repository:"
+          ls -la
+
       - name: Run Ansible playbook
         run: |
           ansible-playbook ansible/playbooks/echo_hostname.yml
