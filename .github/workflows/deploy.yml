@@ -21,6 +21,12 @@ jobs:
           echo "Files in the repository:"
           ls -la
 
+      - name: Debug current working directory
+        run: |
+            pwd
+            cat ansible/ansible.cfg
+            ansible-inventory --list
+
       - name: Run Ansible playbook
         run: |
           ansible-playbook ansible/playbooks/echo_hostname.yml
