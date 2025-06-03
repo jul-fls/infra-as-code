@@ -13,12 +13,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-  
-  echo-hostnames:
-    name: Run Ansible playbook to echo hostnames
-    runs-on: self-hosted
 
-    steps:
       - name: Run Ansible playbook
         run: |
           ansible-playbook ansible/playbooks/echo_hostname.yml
